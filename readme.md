@@ -1,6 +1,34 @@
 # Notes
 
-![How Nest Work](./digram/Nest_Server.svg)
+![How Nest Work](./digrams/Nest_Server.svg)
+ Nest depeand on `express`or `fastfiy` to handle http request.
+
+![Nest_cycle](./digrams/nest-cycles.svg)
+
+- `Pipe` Valdiate data contained in the request
+- `Guard` Make sure the user is authenticated
+- `Controller` Route the request to particular function
+- `Service` Run some business logic
+- `Repository` Access a database
+
+## Pipe
+
+![Pipe(Validation_pipe)](./digrams/validation-pipe.svg)
+
+- `DTO` Stands for `Data Transfer Object` and it carries data between two places
+
+## Dependency Injection
+`Dependency injection` is a design pattern in which a class requests dependencies from external sources rather than creating them.
+
+### Dependency Injection Container Flow
+
+1. Register all classes with the conrainer
+2. Container will figure out what each dependency each class has
+3. We then ask the container to create an instance of class for us
+4. Container creates all required dependencies and give us the instance
+5. Container will hold onto the created dependency instaces and reuse them if needed 
+
+#### Miscellaneous
 
 - `@nestjs/common` Contain vast majority of nest function classes etc
 - `@nestjs/platfrom-express` Let nest use express.js for handling http request
@@ -8,7 +36,7 @@
 - `Controller` Decorator that marks a class as a Nest controller that can receive inbound requests and produce responses
 - `Get` Route handler (method) Decorator. Routes HTTP GET requests to the specified path.
 
-### Nest Parts
+#### Nest Parts
 
 - Controllers: Handle incoming requests
 - Services: Handle data access and business logic
