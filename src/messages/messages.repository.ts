@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'fs/promises';
 export class MessagesRepository {
   async findOne(id: string) {
     const contents = JSON.parse(await readFile('db.json', 'utf-8'));
-    return contents.messages.find((obj) => obj.id === id);
+    return contents.messages.find((obj) => obj.id == id);
   }
 
   async findAll() {
