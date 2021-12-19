@@ -15,6 +15,6 @@ export class MessagesController {
   @Post()
   createMessage(@Body() body: CreateMessageDto) {
     console.log(body);
-    return `${body}`;
+    return `${body.content}`;
   }
 }
