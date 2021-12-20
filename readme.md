@@ -31,6 +31,17 @@
 4. Container creates all required dependencies and give us the instance
 5. Container will hold onto the created dependency instaces and reuse them if needed 
 
+## Modules
+![How Module Work](./digrams/module.jpg)
+The module is a collection of controllers, services, etc. 
+- `@Module` decorator provides metadata about module structure and it have these options:
+   - ` providers `	is an instruction to the Dependency Injection system on how to obtain a value for a dependency
+   - ` controllers `	the set of controllers defined in this module
+   - ` imports `	the list of imported modules which are required in this module
+   - ` exports `	it control visability of module components outside module.
+
+The ` module ` encapsulates providers by default.
+
 ## Miscellaneous
 
 - `@nestjs/common` Contain vast majority of nest function classes etc
