@@ -33,7 +33,9 @@
 
 ## Modules
 ![How Module Work](./digrams/module.jpg)
-The module is a collection of controllers, services, etc. 
+
+The module is a collection of controllers, services, etc.
+
 - `@Module` decorator provides metadata about module structure and it have these options:
    - ` providers `	is an instruction to the Dependency Injection system on how to obtain a value for a dependency
    - ` controllers `	the set of controllers defined in this module
