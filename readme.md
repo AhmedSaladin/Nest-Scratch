@@ -39,8 +39,8 @@ The module is a collection of controllers, services, etc.
 - `@Module` decorator provides metadata about module structure and it have these options:
    - ` providers `	is an instruction to the Dependency Injection system on how to obtain a value for a dependency
    - ` controllers `	the set of controllers defined in this module
-   - ` imports `	the list of imported modules which are required in this module
-   - ` exports `	it control visability of module components outside module.
+   - ` imports `	the list of imported modules that are required in this module
+   - ` exports ` control the visability of module components outside module.
 
 The ` module ` encapsulates providers by default.
 
