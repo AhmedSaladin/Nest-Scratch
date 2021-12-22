@@ -1,8 +1,23 @@
+@host=http://localhost:3000
+
+
 ### Create a new user
-POST http://localhost:3000/auth/signup
+POST {{host}}/auth/signup
 Content-Type: application/json
 
 {
   "email":"ahmed@ahmed.com",
   "password":"12535"
 }
+
+
+### Get user by id
+GET {{host}}/auth/2
+
+
+### Get user by email
+Get {{host}}/auth?email=ahmed@ahmed.com
+
+
+### Delete user
+Delete {{host}}/auth/2
