@@ -12,7 +12,7 @@ Content-Type: {{type}}
 
 
 ### Get user by id
-GET {{host}}/auth/1
+GET {{host}}/auth/4
 
 
 ### Get user by email
