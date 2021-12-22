@@ -1,9 +1,9 @@
-@host=http://localhost:3000
-
+@host= http://localhost:3000
+@type = application/json
 
 ### Create a new user
 POST {{host}}/auth/signup
-Content-Type: application/json
+Content-Type: {{type}}
 
 {
   "email":"ahmed@ahmed.com",
@@ -12,12 +12,21 @@ Content-Type: application/json
 
 
 ### Get user by id
-GET {{host}}/auth/2
+GET {{host}}/auth/1
 
 
 ### Get user by email
-Get {{host}}/auth?email=ahmed@ahmed.com
+Get {{host}}/auth?email=ahmed@a.com
 
 
 ### Delete user
 Delete {{host}}/auth/2
+
+
+### Update user info
+Put {{host}}/auth/4
+Content-Type: {{type}}
+
+{
+  "email":"ahmed@a.com"
+}
