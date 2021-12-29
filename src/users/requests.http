@@ -1,7 +1,7 @@
 @host= http://localhost:3000
 @type = application/json
 
-### Create a new user
+### SignUp
 POST {{host}}/auth/signup
 Content-Type: {{type}}
 
@@ -10,6 +10,15 @@ Content-Type: {{type}}
   "password":"12535"
 }
 
+
+### SignIn
+POST {{host}}/auth/signin
+Content-Type: {{type}}
+
+{
+  "email":"ahmeda@ahmed.com",
+  "password":"12535"
+}
 
 ### Get user by id
 GET {{host}}/auth/4

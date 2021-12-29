@@ -17,13 +17,19 @@ export class AuthService {
   }
 
   async signIn(email: string, password: string) {
-    const user = await this.userService.find(email);
-    if (user.length) throw new BadRequestException('Email already exist');
+    const [user] = await this.userService.find(email);
+    if (!user) throw new BadRequestException('Password or Email not match');
+    const salt = user.password.split('.')[0];
+    const hashedPassword = await this.hashPassword(password, salt);
+    if (hashedPassword !== user.password)
+      throw new BadRequestException('Password or Email not match');
+    return user;
   }
 
-  private async hashPassword(password: string) {
-    const salt = randomBytes(8).toString('hex');
-    console.log(salt);
+  private async hashPassword(
+    password: string,
+    salt = randomBytes(8).toString('hex'),
+  ) {
     const hashedPassword = (await scrypt(password, salt, 32)) as Buffer;
     const newPassword = salt + '.' + hashedPassword.toString('hex');
     return newPassword;
