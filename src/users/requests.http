@@ -6,7 +6,7 @@ POST {{host}}/auth/signup
 Content-Type: {{type}}
 
 {
-  "email":"ahmed@ahmed.com",
+  "email":"ahmeda@ahmed.com",
   "password":"12535"
 }
 
